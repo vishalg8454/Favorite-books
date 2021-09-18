@@ -3,12 +3,20 @@ import React, { useState } from "react";
 
 const arr = ["Fiction", "Non-fiction", "Self-help"];
 const fictionList = [
-  "Kafka On the Shore",
-  "Norwegian Woods",
-  "Wuthering Heights"
+  { name: "Kafka On the Shore", rating: 5 },
+  { name: "Norwegian Woods", rating: 4.5 },
+  { name: "Wuthering Heights", rating: 4 }
 ];
-const nonFictionList = ["The God Delusion", "Never Split the Difference"];
-const selfHelp = ["Can't hurt me", "The Mindset", "Deep Work", "The 5 AM Club"];
+const nonFictionList = [
+  { name: "The God Delusion", rating: 5 },
+  { name: "Never Split the Difference", rating: 4 }
+];
+const selfHelp = [
+  { name: "Can't hurt me", rating: 3.5 },
+  { name: "The Mindset", rating: 4.5 },
+  { name: "Deep Work", rating: 5 },
+  { name: "The 5 AM Club", rating: 4 }
+];
 
 export default function App() {
   var [activeIndex, setActiveIndex] = useState(0);
@@ -40,19 +48,30 @@ export default function App() {
           fictionList.map((item) => {
             return (
               <li type="none" className="book-list-item">
-                {item}
+                <p>{item.name}</p>
+                {"Rating = " + item.rating}
               </li>
             );
           })}
 
         {activeIndex === 1 &&
           nonFictionList.map((item) => {
-            return <li className="book-list-item">{item}</li>;
+            return (
+              <li type="none" className="book-list-item">
+                <p>{item.name}</p>
+                {"Rating = " + item.rating}
+              </li>
+            );
           })}
 
         {activeIndex === 2 &&
           selfHelp.map((item) => {
-            return <li className="book-list-item">{item}</li>;
+            return (
+              <li type="none" className="book-list-item">
+                <p>{item.name}</p>
+                {"Rating = " + item.rating}
+              </li>
+            );
           })}
       </ul>
     </div>
