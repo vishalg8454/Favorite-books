@@ -35,3 +35,7 @@ ul {
   max-width: 200px;
   margin: auto;
 }
+p {
+  color: #2563eb;
+  font-size: large;
+}
